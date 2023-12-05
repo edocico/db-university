@@ -2,23 +2,27 @@
 
 1. Contare quanti iscritti ci sono stati ogni anno
 
-````MYSQL
 SELECT COUNT(id) AS 'number_of_student'
 FROM `students`
 GROUP BY YEAR(`enrolment_date`);
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-```MYSQL
 SELECT COUNT(id) AS 'teachers_in_same_address'
 FROM `teachers`
 GROUP BY(`office_address`);
+
 3. Calcolare la media dei voti di ogni appello d'esame
 
-```MYSQL
-
+SELECT AVG(`vote`) AS 'vote_average', `exam_id`
+FROM `exam_student`
+GROUP BY(`exam_id`);
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+SELECT COUNT(id) AS 'number_of_degrees', `department_id`
+FROM `degrees`
+GROUP BY(`department_id`);
 
 # Query with join
 
@@ -35,4 +39,7 @@ GROUP BY(`office_address`);
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
    per ogni esame, stampando anche il voto massimo. Successivamente,
    filtrare i tentativi con voto minimo 18.
-````
+
+```
+
+```
