@@ -82,7 +82,7 @@ FROM `departments`;
 
 ```MYSQL
 
-SELECT *
+SELECT COUNT(*) as `teachers`
 FROM `teachers`
 WHERE `phone` IS NULL;
 ```
